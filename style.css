@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+/* Var styles */
+
+:root {
+    --primary-color: #2e1065;
+    --lavender-purple: #8b5cf6;
+    --pastel-lilac: #f1ecf7;
+    --soft-lavender: #ddd6fe;
+    --muted-amethyst: #B49FCC;
+    --white: rgb(246, 241, 252);
+}
+
+*,
+::before,
+::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: grid;
+    grid-template-columns: 15rem 4fr;
+    font-family: 'Rubik', sans-serif;
+}
+
+/* Header styles */
+
+header {
+    grid-column-start: 2;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: var(--white);
+    padding: 1rem;
+}
+
+.search-container {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    width: 80%;
+}
+
+.search-container input[type="text"] {
+    flex: 1;
+    border: none;
+    padding: 8px;
+    border-radius: 10px;
+    outline: none;
+    font: inherit;
+    margin: 10px;
+    background-color: var(--soft-lavender);
+}
+
+.search-container button {
+    background-color: var(--lavender-purple);
+    border: none;
+    padding: 8px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    outline: none;
+}
+
+.search-container img {
+    width: 20px;
+    height: 20px;
+    vertical-align: middle;
+}
+
+.search-container input[type="text"]:focus {
+    border: var(--primary-color) solid 1px;
+}
+
+.button-container {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.button-container button {
+    background-color: var(--primary-color);
+    border: none;
+    padding: 10px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    color: var(--pastel-lilac);
+    font-weight: bold;
+    outline: none;
+}
+
+/* Sidebar styles */
+
+aside.sidebar {
+    grid-column: 1 / span 1;
+    grid-row: 1 / span 2;
+    background-color: var(--primary-color);
+    text-align: center;
+    color: var(--pastel-lilac);
+    font-size: 1.3em;
+}
+
+aside.sidebar li svg {
+    fill: var(--soft-lavender);
+    width: 30px;
+}
+
+.primary-links li,
+.secondary-links li {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: 15px;
+}
+
+.primary-links {
+    margin: 3rem 0;
+}
+
+.primary-links li:hover,
+.secondary-links li:hover {
+    background-color: var(--muted-amethyst);
+}
+
+/* Main Content */
+main {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: var(--soft-lavender);
+}
+
+.your-projects,
+.announcements,
+.trending {
+    padding: 1.5em;
+}
+
+.your-projects .project-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.project-cards .card,
+.announcement-cards,
+.trending-cards {
+    color: black;
+    text-align: center;
+    padding: 1rem;
+    border-radius: 15px;
+    background-color: white;
+    box-shadow: 5px 20px 35px #00303857;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.announcement-cards .card {
+    padding: 1rem;
+    border-bottom: 1px solid rgb(151, 151, 151);
+}
+
+.card-title {
+    color: black;
+    font-size: 20px;
+}
+
+.card-text {
+    color: var(--primary-color);
+    font-size: 15px;
+    text-align: left;
+    padding: 0.5rem;
+}
+
+a {
+    text-decoration: none;
+    color: var(--soft-lavender);
+    ;
+}
+
+li {
+    list-style-type: none;
+}
+
+li.card {
+    text-align: left;
+    padding: 0.5em;
+}
+
+h1 {
+    margin-bottom: 1rem;
+    font-size: 25px;
+}
+
+.trending {
+    grid-column: 2;
+}
+
+aside.sidebar .logo {
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 80px 1fr;
+    grid-template-areas: 'logo-img logo-name';
+    align-items: center;
+}
+
+aside.sidebar .logo p {
+    grid-area: logo-name;
+    justify-self: start;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+aside.sidebar .logo svg{
+    width: 60px;
+    grid-area: logo-img;
+    fill: var(--soft-lavender);
+    justify-self: end;
+}   
+
+.profile img {
+    width: 100px;
+}
+
+img {
+   width: 64px; 
+}
+
+.trending-cards > .card {
+    display: flex;
+    align-items: center;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile-greeting {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas: "profile-img greeting" 
+    "profile-img name";
+    align-items: center;
+}
+
+.profile-greeting img {grid-area: profile-img;}
+
+.profile-greeting p{grid-area: greeting;}
+
+.profile-greeting h1 {grid-area: name; margin: 0;}
